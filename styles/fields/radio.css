@@ -1,0 +1,59 @@
+label+.radio-wrapper {
+    margin-top: 1rem;
+}
+
+.radio-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    /*muito interessante! auto-fit vai fazer ele preencher automaticamente, quantas unidades forem necessárias, porém a função minman vai defiinir o mínimo do tamanho pra cada elemento, que será 7.5 rem se tiver um elemento ou dois, e depois vai ser 1fr (proporcional), pois ele não vai conseguir preencher mais de doius com esta medida de 7.5rem (que foi tirado do calculo do figma 120px/16px (unidade de medida padrão do rem/navegador))*/
+}
+
+.radio-inner {
+    border: 1px solid var(--stroke-default);
+    border-radius: .5rem;
+
+    display: grid;
+    justify-items: center;
+    gap: .5rem;
+
+    padding: 2rem .5rem;
+
+    position: relative;
+
+    & input,
+    & input:focus,
+    & input:hover {
+        /*unset vai tirar tudo que já fizemos anterirormente em outro arquivo css já carregado*/
+        all: unset;
+        position: absolute;
+        inset: 0;
+        /* inset 0 faz ele ir pra extremidade esquerda superior, mas de alguma maneira pegar todo campo do relative (pai desse position absolute)*/
+    }
+
+    .radio-image {
+        background-image: url(../../assets/icons/radio-default.svg);
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        top: .5rem;
+        left: .5rem;
+    }
+
+    &:hover,
+    &:focus-within {
+        border: 1px solid var(--stroke-hightlight);
+
+        & .radio-image {
+            background-image: url(../../assets/icons/radio-hover.svg);
+        }
+    }
+
+    &:has(:checked) {
+        border: 2px solid var(--stroke-hightlight);
+
+        & .radio-image {
+            background-image: url(../../assets/icons/radio.checked.svg);
+            /*se tiver algum atributo checked no elemento que recebe a classe .radio-inner, no caso, uma div que tem dentro dela um input que extende ela toda, ele vai aplicar esse background (por que? Porque este é o ultimo, e o css é em cascata, vai ignorar o outro e usar este)*/
+        }
+    }
+}

@@ -86,6 +86,7 @@
                         </div>
 
                     </fieldset>
+
                     <fieldset class="address">
                         <legend>Endereço residencial</legend>
                         <div class="input-wrapper">
@@ -121,9 +122,8 @@
 
                     <fieldset class="gardian">
                         <legend>Informações do responsável</legend>
-                        <div class="input-wrapper"><label for="gardian">
-
-                            </label>
+                        <div class="input-wrapper"> <!--classe só serve para deixar opaco, caso estaja disabled-->
+                            <label for="gardian">Nome do responsável</label>
                             <input type="text" id="gardian" name="gardian">
                             <small>Principal responsável legal e contato de emergência</small>
                         </div>
@@ -140,6 +140,33 @@
                                 <img src="assets/icons/alert-circle.svg" alt="ícone de alerta vermelho">
                                 <span>Insira um e-mail válido</span>
                             </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="enroll-options">
+                        <legend>Opções de matrícula</legend>
+                        <div class="input-wrapper">
+                            <label for="">Selecione o turno do estudo<label>
+                                    <div class="radio-wrapper">
+
+                                        <div class="radio-inner">
+                                            <div class="radio-image"></div>
+                                            <!-- Apenas pra criar aquele seletor laranja, via css-->
+                                            <input type="radio" name="study-shift" value="morning" id="morning">
+                                            <!-- verdadeiro input-->
+                                            <img src="assets/icons/sun-cloud-02.svg" alt="ícone de sol com nuvem">
+                                            <label for="morning">Manhã<label>
+                                        </div>
+
+                                        <div class="radio-inner">
+                                            <div class="radio-image"></div>
+                                            <!-- Apenas pra criar aquele seletor laranja, via css-->
+                                            <input type="radio" name="study-shift" value="evening" id="evening">
+                                            <!-- verdadeiro input-->
+                                            <img src="assets/icons/sun-02.svg" alt="ícone de sol">
+                                            <label for="evening">Manhã<label>
+                                        </div>
+                                    </div>
                         </div>
                     </fieldset>
                 </form>

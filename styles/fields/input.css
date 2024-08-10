@@ -2,9 +2,11 @@ input,
 textarea,
 select {
     appearance: none;
+    /*independentemente de qual input é, ele vai eliminar a aparência dele, seja checkbox ou radio*/
     width: 100%;
     border-radius: .5rem;
-    border: 1px solid var(--stroke-default);
+    border: 3px solid var(--stroke-default);
+
 
     padding: .75rem 1rem;
 
@@ -26,7 +28,7 @@ textarea:focus,
 input[type="date"]:focus-within {
     /*se estiver com foco em algum dos elementos do input, ele vai aplicar isso*/
     outline: .25rem solid var(--surface-secondary);
-    border: .125rem solid var(--stroke-hightlight);
+    border: .125rem solid var(--stroke-highlight);
     outline-offset: .1px;
     /*hack pro navegador safari - algumas coisas não funcionam lá, neste caso foi o outline - todo navegador tem uma peculiaridade ! Chatice!*/
 }
@@ -61,7 +63,7 @@ select {
     gap: 1.25rem;
 }
 
-.input-wrapper:has([disabled]) {
+.er:has([disabled]) {
     opacity: .5;
 }
 
